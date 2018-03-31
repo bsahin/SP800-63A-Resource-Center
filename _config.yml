@@ -1,0 +1,131 @@
+# Site settings
+title: Federal Identity, Credential, and Access Management Architecture
+name: Federal Identity, Credential, and Access Management Architecture
+email: icam@gsa.gov
+author:
+    name: FICAM
+description: Information on the US FICAM Architecture
+highlighter: rouge
+repo_url: https://github.com/GSA/ficam-arch
+baseurl: '/ficam-arch'
+branch: federalist-pages
+# Federalist overwrites the site.branch value when deploying
+# the site.branch was used in dynamic link generation for objects like Edit Page
+# we want the dynamic links to send users to the staging branch.  Adding new site variable to ensure federalist doesn't overwrite.
+editbranch: staging
+
+# Point the logo URL at a file in your repo or hosted elsewhere by your organization
+logourl: /ficam-arch/img/logo.png
+logoalt: Federal Identity Credential and Access Management
+
+# Links
+# List links that you would like to appear on the top navigation bar here
+navbar:
+- title: IDmanagement.gov
+  description: Idmanagement.gov
+  url: https://www.idmanagement.gov
+#- title: Federal ICAM Architecture
+#  description: Federal ICAM Architecture
+#  url: https://arch.idmanagement.gov
+- title: PIV Guides
+  description: PIV Guides
+  url: https://piv.idmanagement.gov
+- title: Federal PKI Guides
+  description: Federal PKI Guides
+  url: https://fpki.idmanagement.gov
+
+# Put the information about your site's GitHub repository if it is public
+repo_url: https://github.com/GSA/ficam-arch/
+
+# Build settings
+markdown: kramdown
+
+exclude:
+- bin
+- config.rb
+- Gemfile
+- Gemfile.lock
+- gems
+- Procfile
+- Rakefile
+- README.md
+- script
+- vendor
+
+navigation:
+- text: Introduction
+  url: ''
+  internal: true
+  coll: false
+- text: Background
+  url: background
+  internal: true
+  coll: false
+- text: Conceptual View
+  url: conceptual
+  internal: true
+  coll: false
+- text: Goals and Objectives
+  url: goals
+  internal: true
+  coll: false
+- text: Services Framework
+  url: services/
+  internal: true
+  coll: true
+  collname: services
+- text: Use Cases
+  url: usecases/
+  internal: true
+  coll: true
+  collname: usecases
+- text: Applications View
+  url: applications
+  internal: true
+  coll: false
+#- text: Demos
+#  url: demos/index/
+#  internal: true
+#  coll: true
+#  collname: usecases
+#https://github.com/jekyll/jekyll/issues/2346
+#- text: FAQ
+#  url: faq
+#  internal: true
+#  coll: false
+- text: Standards & Policies
+  url: standards
+  internal: true
+  coll: false
+- text: Contribute
+  url: contribute
+  internal: true
+  coll: false
+
+#https://github.com/jekyll/jekyll/issues/2346
+collections:
+  usecases:
+    label: "Use Cases"
+    permalink: usecases/:path/
+    output: true
+  services:
+    label: "Services"
+    permalink: services/:path/
+    output: true
+
+#- text: Update the config file
+#  url: update-the-config-file/
+#  internal: true
+#  children:
+#  - text: Understanding the `baseurl:` property
+#    url: understanding-baseurl/
+#    internal: true
+
+include:
+- _stylesheets
+- _javascript
+
+
+
+# Custom site configuration
+lang: en
